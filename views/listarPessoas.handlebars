@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handlebars - Listar</title>
+</head>
+<body>
+    <h1>Handlebars - Listar Pessoas</h1>
+    
+    <ul>
+        {{#each pessoas}}
+            <li>
+                <a href="/pessoas/{{id}}">{{nome}}</a>
+                <a href="/pessoas/{{id}}/editar">Editar</a>
+
+                <form action="/pessoas/{{id}}/excluir" method="post" style="display: inline;">
+                    <button type="submit" onclick="return confirm('Confirmar exclusão?')">
+                        Excluir
+                    </button>
+                </form>
+            </li>
+        {{/each}}
+    </ul>
+
+    <a href="/">Voltar</a>
+</body>
+</html>
